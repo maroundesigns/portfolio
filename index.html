@@ -145,6 +145,18 @@
     .service-features li::before { content: ''; width: 16px; height: 1px; background: var(--gold); opacity: .5; flex-shrink: 0; }
     .service-cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 36px; color: var(--gold); text-decoration: none; font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; border-bottom: 1px solid rgba(201,168,76,.3); padding-bottom: 4px; transition: border-color .3s; cursor: none; }
     .service-cta:hover { border-color: var(--gold); }
+    .identity-package { margin-top: 16px; background: var(--off-black); border: 1px solid var(--border); padding: 48px 56px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; align-items: center; position: relative; overflow: hidden; }
+    .identity-package::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+    .identity-package-label { font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .identity-package-title { font-family: var(--font-display); font-size: 32px; font-weight: 700; line-height: 1.1; margin-bottom: 12px; }
+    .identity-package-desc { font-family: var(--font-light); font-size: 17px; font-weight: 300; color: var(--muted); line-height: 1.75; }
+    .identity-package-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .identity-package-features li { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 10px; letter-spacing: .04em; }
+    .identity-package-features li::before { content: ''; width: 16px; height: 1px; background: var(--gold); flex-shrink: 0; }
+    .identity-package-price-block { text-align: right; }
+    .identity-package-price { font-family: var(--font-display); font-size: 52px; font-weight: 700; color: var(--gold); line-height: 1; }
+    .identity-package-period { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 8px; margin-bottom: 28px; }
+    @media (max-width: 900px) { .identity-package { grid-template-columns: 1fr; gap: 32px; padding: 40px 28px; } .identity-package-price-block { text-align: left; } }
     .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); }
     .stat { background: var(--off-black); padding: 52px 40px; text-align: center; }
     .stat-num { font-family: var(--font-display); font-size: 56px; font-weight: 900; color: var(--gold); line-height: 1; letter-spacing: -.03em; }
@@ -198,7 +210,19 @@
       .work-grid { grid-template-columns: 1fr 1fr; }
       .work-item:nth-child(n) { grid-column: span 1; aspect-ratio: 4/3; }
       .services-grid { grid-template-columns: 1fr; }
-      .stats-row { grid-template-columns: repeat(2,1fr); }
+      .identity-package { margin-top: 16px; background: var(--off-black); border: 1px solid var(--border); padding: 48px 56px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; align-items: center; position: relative; overflow: hidden; }
+    .identity-package::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+    .identity-package-label { font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .identity-package-title { font-family: var(--font-display); font-size: 32px; font-weight: 700; line-height: 1.1; margin-bottom: 12px; }
+    .identity-package-desc { font-family: var(--font-light); font-size: 17px; font-weight: 300; color: var(--muted); line-height: 1.75; }
+    .identity-package-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .identity-package-features li { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 10px; letter-spacing: .04em; }
+    .identity-package-features li::before { content: ''; width: 16px; height: 1px; background: var(--gold); flex-shrink: 0; }
+    .identity-package-price-block { text-align: right; }
+    .identity-package-price { font-family: var(--font-display); font-size: 52px; font-weight: 700; color: var(--gold); line-height: 1; }
+    .identity-package-period { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 8px; margin-bottom: 28px; }
+    @media (max-width: 900px) { .identity-package { grid-template-columns: 1fr; gap: 32px; padding: 40px 28px; } .identity-package-price-block { text-align: left; } }
+    .stats-row { grid-template-columns: repeat(2,1fr); }
       #about { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 20px; text-align: center; }
     }
@@ -425,6 +449,25 @@
           <li>Priority 5 day turnaround</li>
           <li>Unlimited revisions</li>
         </ul>
+        <a href="#contact" class="service-cta">Get Started <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.2"/></svg></a>
+      </div>
+    </div>
+    <div class="identity-package reveal">
+      <div>
+        <p class="identity-package-label">One-Time Project</p>
+        <h3 class="identity-package-title">Brand Identity<br>Package</h3>
+        <p class="identity-package-desc">A complete visual identity for brands launching or rebranding. Everything you need to show up with confidence &mdash; from logo to launch creative.</p>
+      </div>
+      <ul class="identity-package-features">
+        <li>Logo + variations</li>
+        <li>Color &amp; typography system</li>
+        <li>Brand guidelines PDF</li>
+        <li>Logo animation (After Effects)</li>
+        <li>3 launch ad creatives</li>
+      </ul>
+      <div class="identity-package-price-block">
+        <div class="identity-package-price">$3,500</div>
+        <p class="identity-package-period">One-time fee</p>
         <a href="#contact" class="service-cta">Get Started <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.2"/></svg></a>
       </div>
     </div>
