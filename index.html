@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Maroun Designs — premium ad creatives, motion graphics, and brand visuals for e-commerce and DTC brands. Available for monthly retainers." />
-  <meta property="og:title" content="Maroun Designs" />
-  <meta property="og:description" content="Premium ad creatives, motion graphics, and brand visuals for e-commerce brands. Available for retainers." />
+  <meta name="description" content="Maroun Designs — ad creatives and motion graphics for DTC fashion, streetwear, and skincare brands running Meta paid social. Monthly retainers from $1,500." />
+  <meta name="keywords" content="DTC ad creative, Meta paid social creative, skincare brand ads, fashion brand motion graphics, streetwear ad design, e-commerce listing images, motion graphics retainer, DTC brand creative agency" />
+  <meta property="og:title" content="Maroun Designs — Ad Creative for DTC Brands" />
+  <meta property="og:description" content="Ad creatives and motion graphics for DTC fashion, streetwear, and skincare brands on Meta paid social. Monthly retainers from $1,500." />
   <meta property="og:image" content="https://maroundesigns.github.io/portfolio/Maroun_Designs_Logo.png" />
   <meta property="og:image:width" content="936" />
   <meta property="og:image:height" content="1139" />
@@ -245,6 +246,18 @@
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
       .marquee-track { animation: none; }
     }
+
+    #process .process-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); margin-top: 72px; }
+    .process-step { background: var(--black); padding: 56px 40px; position: relative; overflow: hidden; transition: background .35s; }
+    .process-step:hover { background: #0d0d0d; }
+    .process-num { font-size: 48px; font-family: var(--font-display); font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 24px; letter-spacing: -.04em; }
+    .process-title { font-family: var(--font-display); font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+    .process-desc { font-family: var(--font-light); font-size: 16px; font-weight: 300; color: var(--muted); line-height: 1.75; }
+    .who-for { border: 1px solid var(--border); padding: 28px 36px; margin-bottom: 0; display: flex; align-items: center; gap: 32px; margin-top: 72px; }
+    .who-for-label { font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+    .who-for-text { font-family: var(--font-light); font-size: 17px; font-weight: 300; color: var(--muted); line-height: 1.6; border-left: 1px solid var(--border); padding-left: 32px; }
+    .services-grid { margin-top: 16px !important; }
+    @media (max-width: 900px) { #process .process-grid { grid-template-columns: 1fr; } .who-for { flex-direction: column; gap: 16px; } .who-for-text { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 16px; } }
   </style>
 </head>
 <body>
@@ -277,6 +290,7 @@
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="case-studies.html">Case Studies</a></li>
       <li><a href="#contact" class="nav-cta">Hire Me</a></li>
@@ -286,10 +300,10 @@
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-counter" aria-hidden="true">11</div>
-    <p class="hero-tag">Motion &amp; Brand Creative &mdash; Available for Retainers</p>
-    <h1 class="hero-title">Ad creatives<br>that <em>convert.</em><br>Motion that<br><em>stops the scroll.</em></h1>
+    <p class="hero-tag">Ad Creative &amp; Motion &mdash; For DTC Brands on Meta Paid Social</p>
+    <h1 class="hero-title">Ad creatives<br>for DTC brands<br>that actually <em>sell.</em></h1>
     <div class="hero-bottom">
-      <p class="hero-desc">I help e-commerce brands and content creators stand out with premium ad creatives, motion graphics, and brand visuals &mdash; delivered on retainer.</p>
+      <p class="hero-desc">I make static and motion ad creatives for fashion, streetwear, and skincare brands running Meta paid social &mdash; delivered on retainer, every month.</p>
       <a href="#work" class="btn-outline">
         <span>View Selected Work</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.2"/></svg>
@@ -425,6 +439,10 @@
   <section id="services">
     <div class="section-label reveal">What I Offer</div>
     <h2 class="section-title reveal reveal-delay-1">Services &amp;<br><em style="font-style:italic;color:var(--gold);">Pricing</em></h2>
+    <div class="who-for reveal">
+      <p class="who-for-label">Built For</p>
+      <p class="who-for-text">DTC fashion, streetwear, and skincare brands running &mdash; or ready to run &mdash; Meta paid social. If you need creatives that actually perform in the feed, this is for you.</p>
+    </div>
     <div class="services-grid">
       <div class="service-card reveal">
         <p class="service-num">01</p>
@@ -490,6 +508,27 @@
         <a href="#contact" class="service-cta">Get Started <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.2"/></svg></a>
       </div>
     </div>
+    <div class="identity-package reveal" style="margin-top:1px;">
+      <div>
+        <p class="identity-package-label">One-Time Project</p>
+        <h3 class="identity-package-title">E-Commerce<br>Listing Images</h3>
+        <p class="identity-package-desc">Your product page is your silent salesperson. We design listing images that match the quality of your product &mdash; lifestyle composites, benefit infographics, and brand story slides that convert browsers into buyers.</p>
+      </div>
+      <ul class="identity-package-features">
+        <li>1 hero image</li>
+        <li>2 lifestyle composite images</li>
+        <li>2 infographic / benefit slides</li>
+        <li>2 detail &amp; feature slides</li>
+        <li>1 brand story slide</li>
+        <li>Delivered in 1:1 &amp; 4:5 formats</li>
+        <li>2 revision rounds &middot; 7 day turnaround</li>
+      </ul>
+      <div class="identity-package-price-block">
+        <div class="identity-package-price">$1,800</div>
+        <p class="identity-package-period">Per product &middot; One-time fee</p>
+        <a href="#contact" class="service-cta">Get Started <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6H10M10 6L7 3M10 6L7 9" stroke="currentColor" stroke-width="1.2"/></svg></a>
+      </div>
+    </div>
     <div class="stats-row">
       <div class="stat reveal"><div class="stat-num">11</div><div class="stat-label">Portfolio Pieces</div></div>
       <div class="stat reveal reveal-delay-1"><div class="stat-num">5</div><div class="stat-label">Brand Aesthetics</div></div>
@@ -497,6 +536,29 @@
       <div class="stat reveal reveal-delay-3"><div class="stat-num">&#8734;</div><div class="stat-label">Revisions Included</div></div>
     </div>
   </section>
+
+  <section id="process" style="background:var(--black);border-top:1px solid var(--border);">
+    <div class="section-label reveal">The Process</div>
+    <h2 class="section-title reveal reveal-delay-1">How It<br><em style="font-style:italic;color:var(--gold);">Works</em></h2>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <p class="process-num">01</p>
+        <h3 class="process-title">Discovery Call</h3>
+        <p class="process-desc">We talk about your brand, your current creative situation, and what&rsquo;s working or not on your Meta ads. No pitch deck &mdash; just a real conversation.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <p class="process-num">02</p>
+        <h3 class="process-title">We Build Your Creative</h3>
+        <p class="process-desc">I handle everything &mdash; concept, design, motion. You review, give feedback, and we refine. Delivered on time, every month, without you chasing anyone.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <p class="process-num">03</p>
+        <h3 class="process-title">You Run &amp; Scale</h3>
+        <p class="process-desc">Your ad manager gets fresh, tested creatives every month. You scale what works. We keep producing. It compounds over time &mdash; that&rsquo;s the point.</p>
+      </div>
+    </div>
+  </section>
+
 
   <section id="about">
     <div class="about-left">
@@ -543,7 +605,6 @@
     <p class="footer-copy">&copy; 2026 Maroun Designs. All rights reserved.</p>
     <div class="footer-socials">
       <a href="https://www.linkedin.com/in/benoit-hayek-946b71387/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.instagram.com/maroundesigns?igsh=MWo4czlkb2l5Mnl6Mw%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
     </div>
   </footer>
 
