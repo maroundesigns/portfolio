@@ -68,6 +68,19 @@
     .reveal.visible{opacity:1;transform:none;}
     @media(max-width:900px){nav,#hero,#work,#identity,.back-bar{padding-left:24px;padding-right:24px;}#hero{padding-bottom:52px;}.brief-strip{grid-template-columns:1fr 1fr;}.piece,.piece.flip{grid-template-columns:1fr;direction:ltr;}.id-grid{grid-template-columns:1fr 1fr;}}
     @media(max-width:520px){.brief-strip,.id-grid{grid-template-columns:1fr;}}
+
+    /* DROPDOWN NAV */
+    .nav-brands { position: relative; }
+    .nav-brands-btn { display: flex; align-items: center; gap: 7px; background: none; border: none; color: var(--muted); font-family: var(--fm); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; cursor: none; transition: color .3s; padding: 0; }
+    .nav-brands-btn:hover, .nav-brands.open .nav-brands-btn { color: var(--cream); }
+    .nav-brands-btn svg { transition: transform .3s; }
+    .nav-brands.open .nav-brands-btn svg { transform: rotate(180deg); }
+    .nav-dropdown { position: absolute; top: calc(100% + 16px); right: 0; background: rgba(12,12,12,.97); backdrop-filter: blur(16px); border: 1px solid var(--border); min-width: 180px; opacity: 0; pointer-events: none; transform: translateY(-8px); transition: opacity .25s, transform .25s; z-index: 600; }
+    .nav-brands.open .nav-dropdown { opacity: 1; pointer-events: all; transform: none; }
+    .nav-dropdown a { display: block; padding: 13px 20px; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); transition: color .2s, background .2s; cursor: none; }
+    .nav-dropdown a:last-child { border-bottom: none; }
+    .nav-dropdown a:hover { color: var(--cream); background: rgba(255,255,255,.03); }
+    .nav-dropdown a.current { color: #C9A84C; pointer-events: none; }
   </style>
 </head>
 <body>
@@ -75,6 +88,19 @@
   <nav id="nav">
     <a href="index.html" class="nav-back">&larr; All Brands</a>
     <a href="index.html" class="nav-logo">MD.</a>
+    <div class="nav-brands">
+      <button class="nav-brands-btn">
+        Brands
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2"/></svg>
+      </button>
+      <div class="nav-dropdown">
+      <a href="rouge.html" class="">ROUGE</a>
+      <a href="veil.html" class="current">VEIL</a>
+      <a href="vault.html" class="">VAULT</a>
+      <a href="grove.html" class="">GROVE</a>
+      <a href="halo.html" class="">HALO</a>
+      </div>
+    </div>
   </nav>
   <section id="hero">
     <div class="hero-grad"></div>
@@ -158,6 +184,10 @@
     window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
     const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.1});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    // Dropdown
+    const dd = document.querySelector('.nav-brands');
+    document.querySelector('.nav-brands-btn').addEventListener('click', () => dd.classList.toggle('open'));
+    document.addEventListener('click', e => { if (!dd.contains(e.target)) dd.classList.remove('open'); });
   </script>
 </body>
 </html>

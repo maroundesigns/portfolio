@@ -41,8 +41,9 @@
     .cover-foot { display: flex; justify-content: space-between; padding-left: 24px; border-top: 1px solid var(--border); padding-top: 24px; opacity: 0; animation: up .6s ease 1.2s forwards; }
     .cover-foot-item { display: flex; flex-direction: column; gap: 5px; }
     .cf-label { font-size: 8px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
-    .cf-val { font-size: 11px; color: var(--muted); }
+    .cf-val { font-size: 11px; color: var(--muted); text-decoration: none; }
     .cf-val.email { letter-spacing: .07em; }
+    .cf-val[href]:hover { color: var(--cream); transition: color .3s; }
     @keyframes up { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
     @keyframes fadein { from { opacity:0; } to { opacity:.5; } }
 
@@ -52,18 +53,6 @@
     .work-hd { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 52px; }
     .work-title { font-family: var(--fd); font-size: clamp(34px,4vw,54px); font-weight: 700; line-height: 1.05; }
     .work-note { font-family: var(--fl); font-size: 16px; color: var(--muted); text-align: right; line-height: 1.75; max-width: 220px; }
-
-    .rouge-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3px; margin-bottom: 3px; }
-    .wcard { position: relative; overflow: hidden; cursor: none; background: #0a0203; }
-    .wcard img { width: 100%; height: 100%; object-fit: contain; display: block; transition: transform .7s; }
-    .wcard:hover img { transform: scale(1.03); }
-    .woverlay { position: absolute; inset: 0; background: linear-gradient(to top,rgba(8,8,8,.9),transparent 55%); opacity: 0; transition: opacity .35s; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; }
-    .wcard:hover .woverlay { opacity: 1; }
-    .wo-brand { font-size: 9px; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
-    .wo-title { font-family: var(--fd); font-size: 20px; font-weight: 700; }
-    .wo-type { font-size: 9px; letter-spacing: .12em; color: var(--muted); margin-top: 3px; text-transform: uppercase; }
-    .rouge-main { aspect-ratio: 4/5; }
-    .rouge-side { aspect-ratio: 2/3; }
 
     .brand-strip { display: grid; grid-template-columns: repeat(5,1fr); gap: 3px; }
     .bcard { padding: 30px 20px 26px; position: relative; overflow: hidden; text-decoration: none; color: inherit; display: block; cursor: none; }
@@ -113,8 +102,6 @@
       .cover-rule { display: none; }
       .cover-body,.cover-foot { padding-left: 0; }
       .cover-foot { flex-wrap: wrap; gap: 20px; }
-      .rouge-grid { grid-template-columns: 1fr; }
-      .rouge-side { display: none; }
       .brand-strip { grid-template-columns: 1fr 1fr; }
       .work-hd { flex-direction: column; align-items: flex-start; gap: 12px; }
       .work-note { text-align: left; }
@@ -151,11 +138,11 @@
       </div>
       <div class="cover-foot-item">
         <span class="cf-label">Email</span>
-        <span class="cf-val email">maroundesigns@gmail.com</span>
+        <a href="mailto:maroundesigns@gmail.com" class="cf-val email">maroundesigns@gmail.com</a>
       </div>
       <div class="cover-foot-item">
         <span class="cf-label">LinkedIn</span>
-        <span class="cf-val">Benoit Hayek</span>
+        <a href="https://www.linkedin.com/in/benoit-hayek-946b71387/" target="_blank" class="cf-val">Benoit Hayek</a>
       </div>
     </div>
   </section>
@@ -167,25 +154,6 @@
         <h2 class="work-title reveal rd1">The Portfolio</h2>
       </div>
       <p class="work-note reveal rd2">Five spec brands.<br>Five distinct aesthetics.<br>One consistent standard.</p>
-    </div>
-
-    <div class="rouge-grid reveal">
-      <div class="rouge-main wcard">
-        <img src="images/Rouge/Rouge_Hero_Ad.png" alt="ROUGE — Wear the Dark hero ad" loading="lazy" />
-        <div class="woverlay">
-          <p class="wo-brand">Rouge</p>
-          <h3 class="wo-title">Wear the Dark &mdash; Hero Ad</h3>
-          <p class="wo-type">Editorial Composite &middot; Static Ad</p>
-        </div>
-      </div>
-      <div class="rouge-side wcard">
-        <img src="images/Rouge/Rouge_Bottle_Static.png" alt="ROUGE — bottle static" loading="lazy" />
-        <div class="woverlay">
-          <p class="wo-brand">Rouge</p>
-          <h3 class="wo-title">Bottle Static &mdash; Product Ad</h3>
-          <p class="wo-type">Product Static &middot; Lighting Composite</p>
-        </div>
-      </div>
     </div>
 
     <div class="brand-strip reveal">
