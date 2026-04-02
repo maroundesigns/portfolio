@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Benoit Hayek</title>
+  <meta name="description" content="Resume of Benoit Hayek — Graphic Designer and Motion Creative based in San Diego." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:  #080808;
+      --off:    #0f0f0f;
+      --cream:  #F5F0EB;
+      --gold:   #C9A84C;
+      --muted:  rgba(245,240,235,.4);
+      --border: rgba(245,240,235,.07);
+      --fd: 'Playfair Display', serif;
+      --fm: 'DM Mono', monospace;
+      --fl: 'Cormorant Garamond', serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--cream); font-family: var(--fm); font-size: 13px; line-height: 1.6; overflow-x: hidden; cursor: none; }
+    ::selection { background: var(--gold); color: var(--black); }
+    #cursor { position: fixed; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); }
+    ::-webkit-scrollbar { width: 2px; }
+    ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; display: flex; justify-content: space-between; align-items: center; padding: 32px 56px; transition: background .5s; }
+    nav.scrolled { background: rgba(8,8,8,.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-name { font-family: var(--fd); font-size: 16px; font-weight: 700; color: var(--cream); text-decoration: none; letter-spacing: .02em; cursor: none; }
+    .nav-right { display: flex; gap: 40px; align-items: center; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; transition: color .3s; cursor: none; }
+    .nav-link:hover { color: var(--cream); }
+    .nav-cta { color: var(--gold) !important; border-bottom: 1px solid rgba(201,168,76,.3); padding-bottom: 2px; transition: border-color .3s !important; }
+    .nav-cta:hover { border-color: var(--gold) !important; }
+
+    /* PAGE WRAPPER */
+    .page { padding: 140px 56px 100px; max-width: 960px; margin: 0 auto; }
+
+    /* HEADER */
+    .resume-header { margin-bottom: 64px; }
+    .resume-eyebrow { font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .resume-eyebrow::after { content: ''; width: 36px; height: 1px; background: var(--gold); opacity: .45; }
+    .resume-name { font-family: var(--fd); font-size: clamp(48px, 7vw, 96px); font-weight: 900; line-height: .88; letter-spacing: -.03em; margin-bottom: 28px; }
+    .resume-name em { display: block; font-style: italic; font-weight: 400; color: rgba(245,240,235,.65); }
+    .resume-summary { font-family: var(--fl); font-size: clamp(16px, 1.6vw, 20px); font-weight: 300; color: var(--muted); line-height: 1.85; max-width: 620px; }
+
+    /* DOWNLOAD BUTTON */
+    .download-btn { display: inline-flex; align-items: center; gap: 12px; margin-top: 36px; text-decoration: none; color: var(--cream); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; border: 1px solid var(--border); padding: 14px 24px; transition: border-color .3s, color .3s; cursor: none; position: relative; overflow: hidden; }
+    .download-btn::after { content: ''; position: absolute; inset: 0; background: var(--gold); transform: translateY(101%); transition: transform .3s; z-index: 0; }
+    .download-btn:hover { color: var(--black); border-color: var(--gold); }
+    .download-btn:hover::after { transform: translateY(0); }
+    .download-btn > * { position: relative; z-index: 1; }
+
+    /* SECTION */
+    .section { border-top: 1px solid var(--border); padding-top: 56px; margin-top: 56px; }
+    .section-eyebrow { font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
+    .section-eyebrow::after { content: ''; width: 36px; height: 1px; background: var(--gold); opacity: .45; }
+
+    /* EXPERIENCE */
+    .role { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; padding-bottom: 40px; margin-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .role:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .role-title { font-family: var(--fd); font-size: clamp(22px, 2.5vw, 32px); font-weight: 700; line-height: 1.1; margin-bottom: 6px; }
+    .role-company { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .role-location { font-size: 10px; color: var(--muted); letter-spacing: .1em; text-align: right; margin-bottom: 4px; }
+    .role-dates { font-size: 10px; color: var(--muted); letter-spacing: .1em; text-align: right; }
+    .role-bullets { list-style: none; padding: 0; }
+    .role-bullets li { font-family: var(--fl); font-size: 16px; font-weight: 300; color: var(--muted); line-height: 1.75; padding-left: 16px; position: relative; margin-bottom: 6px; }
+    .role-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--gold); opacity: .5; }
+
+    /* EDUCATION */
+    .edu-block { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; }
+    .edu-degree { font-family: var(--fd); font-size: clamp(22px, 2.5vw, 32px); font-weight: 700; line-height: 1.1; margin-bottom: 6px; }
+    .edu-school { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+    .edu-right { text-align: right; }
+    .edu-grad { font-size: 10px; color: var(--muted); letter-spacing: .1em; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .skill-group { padding: 28px 0; border-bottom: 1px solid var(--border); }
+    .skill-group:nth-child(odd) { padding-right: 40px; border-right: 1px solid var(--border); }
+    .skill-group:nth-child(even) { padding-left: 40px; }
+    .skill-group:nth-last-child(-n+2) { border-bottom: none; }
+    .skill-label { font-size: 9px; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag { padding: 5px 12px; border: 1px solid var(--border); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); transition: border-color .3s, color .3s; }
+    .skill-tag:hover { border-color: rgba(201,168,76,.3); color: rgba(201,168,76,.7); }
+
+    /* FOOTER */
+    footer { padding: 28px 56px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; margin-top: 80px; }
+    .footer-name { font-family: var(--fd); font-size: 14px; font-weight: 700; color: var(--muted); }
+    .footer-copy { font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .3s; cursor: none; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .75s, transform .75s; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .rd1 { transition-delay: .1s; } .rd2 { transition-delay: .2s; } .rd3 { transition-delay: .3s; }
+
+    @media(max-width:900px) {
+      nav { padding: 24px; }
+      .page { padding: 120px 24px 80px; }
+      footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+      .role { grid-template-columns: 1fr; }
+      .role-location, .role-dates { text-align: left; }
+      .edu-block { grid-template-columns: 1fr; }
+      .edu-right { text-align: left; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .skill-group:nth-child(odd) { border-right: none; padding-right: 0; }
+      .skill-group:nth-child(even) { padding-left: 0; }
+      .skill-group:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .skill-group:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="cursor"></div>
+
+  <nav id="main-nav">
+    <a href="index.html" class="nav-name">Benoit Hayek</a>
+    <div class="nav-right">
+      <a href="index.html#work" class="nav-link">Work</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#contact" class="nav-link nav-cta">Get in Touch</a>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="resume-header reveal">
+      <div class="resume-eyebrow">Resume</div>
+      <h1 class="resume-name">
+        Benoit<br>
+        <em>Hayek.</em>
+      </h1>
+      <p class="resume-summary">Graphic designer and motion creative based in San Diego. Specialising in brand identity, static and motion ad creatives, and product composites — with a background in Graphic Information Technology and a foundation in team leadership built across four years in high-volume service environments.</p>
+      <a href="Benoit_Hayek_Resume.pdf" download class="download-btn">
+        <span>Download PDF</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v7M7 9l-3-3M7 9l3-3M2 12h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section reveal rd1">
+      <div class="section-eyebrow">Experience</div>
+
+      <div class="role">
+        <div>
+          <h2 class="role-title">Shift Supervisor</h2>
+          <p class="role-company">Starbucks</p>
+          <ul class="role-bullets">
+            <li>Supervised store operations and led barista teams during peak business hours.</li>
+            <li>Managed cash flow, store procedures, and ensured team compliance with company policies.</li>
+            <li>Resolved customer issues efficiently while upholding service quality standards.</li>
+            <li>Trained new hires and monitored staff performance for consistency and efficiency.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="role-location">San Diego, CA</p>
+          <p class="role-dates">2023 – Present</p>
+        </div>
+      </div>
+
+      <div class="role">
+        <div>
+          <h2 class="role-title">Barista</h2>
+          <p class="role-company">Starbucks</p>
+          <ul class="role-bullets">
+            <li>Accurately prepared customer drink orders in a timely manner during high-traffic hours.</li>
+            <li>Consistently delivered friendly service and built rapport with regular customers.</li>
+            <li>Maintained cleanliness and organisation in a busy workspace.</li>
+            <li>Supported supervisors with inventory and restocking tasks.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="role-location">San Diego, CA</p>
+          <p class="role-dates">2021 – 2023</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section reveal rd2">
+      <div class="section-eyebrow">Education</div>
+      <div class="edu-block">
+        <div>
+          <h2 class="edu-degree">B.S. Graphic<br>Information Technology</h2>
+          <p class="edu-school">Arizona State University</p>
+        </div>
+        <div class="edu-right">
+          <p class="edu-grad">Expected 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section reveal rd3">
+      <div class="section-eyebrow">Skills</div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <p class="skill-label">Design</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Photoshop</span>
+            <span class="skill-tag">Illustrator</span>
+            <span class="skill-tag">Figma</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">Motion</p>
+          <div class="skill-tags">
+            <span class="skill-tag">After Effects</span>
+            <span class="skill-tag">Animation</span>
+            <span class="skill-tag">Motion Design</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">Development</p>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-label">Leadership</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Team Leadership</span>
+            <span class="skill-tag">Conflict Resolution</span>
+            <span class="skill-tag">Multitasking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-name">Benoit Hayek</span>
+    <p class="footer-copy">&copy; 2026. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://mail.google.com/mail/?view=cm&to=bmhayek800@gmail.com" target="_blank" rel="noopener">Email</a>
+      <a href="https://www.linkedin.com/in/benoit-hayek-946b71387/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    var cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', function(e){ cursor.style.left = e.clientX+'px'; cursor.style.top = e.clientY+'px'; }, {passive:true});
+    document.querySelectorAll('a, button').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ document.body.classList.add('ch'); }, {passive:true});
+      el.addEventListener('mouseleave', function(){ document.body.classList.remove('ch'); }, {passive:true});
+    });
+    var nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', scrollY > 60); }, {passive:true});
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, {threshold: 0.08});
+    document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+  </script>
+</body>
+</html>
