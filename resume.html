@@ -104,6 +104,71 @@
     .reveal.visible { opacity: 1; transform: none; }
     .rd1 { transition-delay: .1s; } .rd2 { transition-delay: .2s; } .rd3 { transition-delay: .3s; }
 
+    /* CONTACT ROW */
+    .resume-contact { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 20px; margin-bottom: 0; font-size: 11px; letter-spacing: .1em; color: rgba(245,240,235,.45); }
+    .resume-contact a { color: rgba(245,240,235,.45); text-decoration: none; transition: color .3s; }
+    .resume-contact a:hover { color: var(--gold); }
+    .contact-sep { color: var(--gold); opacity: .45; }
+
+    /* PRINT STYLES */
+    @media print {
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html, body { background: #fff !important; color: #111 !important; font-family: 'DM Mono', monospace, monospace; font-size: 10pt; line-height: 1.55; }
+
+      /* hide interactive/decorative elements */
+      #cursor, nav, .mobile-menu, .download-btn, footer, .section-eyebrow::after, .resume-eyebrow::after { display: none !important; }
+
+      .page { padding: 0.5in 0.6in; max-width: 100%; margin: 0; }
+
+      /* header */
+      .resume-header { margin-bottom: 28pt; }
+      .resume-eyebrow { font-size: 7pt; letter-spacing: .25em; color: #888; text-transform: uppercase; margin-bottom: 6pt; display: block; }
+      .resume-name { font-family: 'Playfair Display', Georgia, serif; font-size: 30pt; font-weight: 900; line-height: .9; letter-spacing: -.02em; color: #111; margin-bottom: 10pt; }
+      .resume-name em { font-style: italic; font-weight: 400; color: #444; display: block; }
+      .resume-summary { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 11pt; font-weight: 300; color: #444; line-height: 1.65; max-width: 100%; margin-bottom: 8pt; }
+
+      /* contact row */
+      .resume-contact { display: flex; flex-wrap: wrap; gap: 6pt; font-size: 8.5pt; color: #555; letter-spacing: .06em; margin-top: 8pt; }
+      .resume-contact a { color: #333; text-decoration: none; }
+      .contact-sep { color: #aaa; }
+
+      /* sections */
+      .section { border-top: 0.5pt solid #ccc; padding-top: 18pt; margin-top: 18pt; }
+      .section-eyebrow { font-size: 7pt; letter-spacing: .28em; text-transform: uppercase; color: #888; margin-bottom: 14pt; display: block; }
+
+      /* roles */
+      .role { display: grid; grid-template-columns: 1fr auto; gap: 16pt; align-items: start; padding-bottom: 16pt; margin-bottom: 16pt; border-bottom: 0.5pt solid #e0e0e0; page-break-inside: avoid; }
+      .role:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+      .role-title { font-family: 'Playfair Display', Georgia, serif; font-size: 14pt; font-weight: 700; line-height: 1.1; color: #111; margin-bottom: 3pt; }
+      .role-company { font-size: 7.5pt; letter-spacing: .18em; text-transform: uppercase; color: #777; margin-bottom: 8pt; }
+      .role-location { font-size: 8pt; color: #888; letter-spacing: .08em; text-align: right; margin-bottom: 2pt; }
+      .role-dates { font-size: 8pt; color: #888; letter-spacing: .08em; text-align: right; }
+      .role-bullets { list-style: none; }
+      .role-bullets li { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 10.5pt; font-weight: 300; color: #444; line-height: 1.65; padding-left: 14pt; position: relative; margin-bottom: 3pt; }
+      .role-bullets li::before { content: '—'; position: absolute; left: 0; color: #aaa; }
+
+      /* education */
+      .edu-block { display: grid; grid-template-columns: 1fr auto; gap: 16pt; align-items: start; page-break-inside: avoid; }
+      .edu-degree { font-family: 'Playfair Display', Georgia, serif; font-size: 14pt; font-weight: 700; color: #111; margin-bottom: 3pt; line-height: 1.15; }
+      .edu-school { font-size: 7.5pt; letter-spacing: .18em; text-transform: uppercase; color: #777; }
+      .edu-right { text-align: right; }
+      .edu-grad { font-size: 8pt; color: #888; letter-spacing: .08em; }
+
+      /* skills */
+      .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+      .skill-group { padding: 10pt 0; border-bottom: 0.5pt solid #e0e0e0; page-break-inside: avoid; }
+      .skill-group:nth-child(odd) { padding-right: 24pt; border-right: 0.5pt solid #e0e0e0; }
+      .skill-group:nth-child(even) { padding-left: 24pt; }
+      .skill-group:nth-last-child(-n+2) { border-bottom: none; }
+      .skill-label { font-size: 7pt; letter-spacing: .22em; text-transform: uppercase; color: #888; margin-bottom: 6pt; }
+      .skill-tags { display: flex; flex-wrap: wrap; gap: 5pt; }
+      .skill-tag { padding: 2pt 7pt; border: 0.5pt solid #ccc; font-size: 7.5pt; letter-spacing: .1em; text-transform: uppercase; color: #555; }
+
+      /* reveal: show everything regardless of scroll state */
+      .reveal { opacity: 1 !important; transform: none !important; }
+    }
+
     @media(max-width:900px) {
       nav { padding: 20px 24px; }
       .nav-right { display: none; }
@@ -153,6 +218,15 @@
       <div class="resume-eyebrow">Resume</div>
       <h1 class="resume-name">Benoit<br><em>Hayek.</em></h1>
       <p class="resume-summary">Graphic designer and motion creative based in San Diego. Specialising in brand identity, static and motion ad creatives, and product composites, with a background in Graphic Information Technology and a foundation in team leadership built across four years in high-volume service environments.</p>
+      <div class="resume-contact">
+        <span>San Diego, CA</span>
+        <span class="contact-sep">·</span>
+        <a href="mailto:bmhayek800@gmail.com">bmhayek800@gmail.com</a>
+        <span class="contact-sep">·</span>
+        <a href="https://www.linkedin.com/in/benoit-hayek-946b71387/" target="_blank" rel="noopener">linkedin.com/in/benoit-hayek-946b71387</a>
+        <span class="contact-sep">·</span>
+        <a href="https://maroundesigns.com" target="_blank" rel="noopener">maroundesigns.com</a>
+      </div>
       <a href="Benoit_Hayek_Resume.pdf" download class="download-btn">
         <span>Download PDF</span>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v7M7 9l-3-3M7 9l3-3M2 12h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
